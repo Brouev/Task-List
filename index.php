@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
 <?php
 if (isset($_SESSION['user_id'])){
     echo '<a href="tasklist.php"></a>';
@@ -7,3 +12,5 @@ if (isset($_SESSION['user_id'])){
     echo '<a href="inscription.php"></a>';
 
 }
+?>
+</body>
