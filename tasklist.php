@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset ($ession['user_id'])){
+if (!isset ($_Session['user_id'])){
     header('Location: login.php');
     exit;
 }
@@ -16,17 +16,17 @@ $tasks=$stmt->fetchAll();
 <body>
     <h2>Tasks</h2>
     <ul>
-    <?php foreach($tasks as $task);?>
+    <?php foreach($tasks as $task):?>
     <li>
         <a href="get-task.php?id=<?=$task['id']?>">
-            <?=htmlspecialchars($task['title'])?>
+            <?=htmlspecialchars($task['task_name'])?>
         </a>
         <?=$task['is_done']?>
     </li>
     <?php endforeach;?>
     </ul>
     <form action="add-task.php" method="POST">
-    <input type="text" name="nom_task" required placeholder="Titre">
+    <input type="text" name="task_name" required placeholder="Titre">
     <textarea name="details" placeholder="details (optionnel)"></textarea>
     <button type="submit">Add</button>
     </form>
