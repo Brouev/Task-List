@@ -1,6 +1,6 @@
 <?php
 try {
-  $conn = new PDO("mysql:host=localhost;dbname=$tasklist");
+  $pdo = new PDO("mysql:host=localhost;dbname=$tasklist");
 } catch(PDOException $e)
 $sql="CREATE TABLE IF NOT EXIST";
  $stmt = $conn->prepare("INSERT INTO user_id(username, mdp)
