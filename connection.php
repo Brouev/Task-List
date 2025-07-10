@@ -5,7 +5,7 @@
 <body>
 <form method="POST">
   <input type="text" name="username" required placeholder="Nom d'utilisateur">
-  <input type="paasword" name="mdp" required placeholder="Mot de passe">
+  <input type="password" name="mdp" required placeholder="Mot de passe">
   <button type="submit">Connexion</button>
 </form><?php
 require 'pdo.php';
