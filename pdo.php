@@ -1,15 +1,24 @@
 <?php
 try {
-  $pdo = new PDO("mysql:host=localhost;dbname=$tasklist");
-} catch(PDOException $e)
-$sql="CREATE TABLE IF NOT EXIST";
- $stmt = $conn->prepare("INSERT INTO user_id(username, mdp)
-  VALUES (:username, :mdp)");
-  $stmt->bindParam(':username', $username);
-  $stmt->bindParam(':mdp', $mdp);
- $stmt = $conn->prepare("INSERT INTO tasklist(user_id, task_name, task_details, is_done)
-  VALUES (:user_id, :task_name, :task_details, :is_done)");
-  $stmt->bindParam(':user_id', $ser_id);
-  $stmt->bindParam(':task_name', $task_name);
-  $stmt->bindParam('task_details', $task_details);
-  $stmt->bindParam(':is_done', $is_done);
+  $pdo = new PDO("mysql:host=localhost;dbname=tasklist;charsert=utf8");
+  $pdo->exec("
+        CREATE TABLE IF NOT EXISTS users (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            username NOT NULL UNIQUE,
+            mdp NOT NULL
+        )
+    ");
+
+  $pdo->exec("
+        CREATE TABLE IF NOT EXISTS tasks (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            user_id INT NOT NULL,
+            task_name NOT NULL,
+            task_details TEXT,
+            is_done BOOLEAN DEFAULT FALSE,
+        )
+    ");
+
+  echo "Les tables ont bien été créées ma belle !";
+} catch (PDOException $e)
+?>
