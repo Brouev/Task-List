@@ -13,4 +13,3 @@ try {
 ?>
 
 
-<!-- rien compris-->

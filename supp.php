@@ -2,7 +2,7 @@
 require 'pdo.php';
 session_start();
 
-if (!isset($_SESSION['users_id']) || !isset($_GET['id'])) { /*c'est les 2 barres*/
+if (!isset($_SESSION['users_id']) || !isset($_GET['id'])) { 
     header('Location: connection.php');
     exit;
 }
