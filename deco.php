@@ -1,5 +1,7 @@
 <?php
 session_start();
 session_destroy();
-hearder(Location:'login.php');
+header('Location: connection.php');
 exit;
+
+
