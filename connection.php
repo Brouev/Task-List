@@ -25,9 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
+<div class="page">
     <h1>Connexion</h1>
-    <?php if (!empty($error)) echo "<p style='color:red;'>$error</p>"; ?>
     <form method="POST">
         <input type="text" name="username" required placeholder="Nom d'utilisateur">
         <input type="password" name="mdp" required placeholder="Mot de passe">

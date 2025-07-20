@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
+<div class="page">
     <h1>Inscription</h1>
     <form method="POST">
         <input type="text" name="username" required placeholder="Nom d'utilisateur">
@@ -32,4 +32,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div>
 </body>
 </html>
+
 

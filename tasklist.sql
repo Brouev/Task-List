@@ -1,15 +1,17 @@
-create database if not exists tasklist;
-use tasklist; 
-create table if not exists users(
-    id int auto_increment primary key,
-    username not null unique,
-    mdp not null
+CREATE DATABASE IF NOT EXISTS tasklist;
+USE tasklist;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL UNIQUE,
+    mdp TEXT NOT NULL
 );
-create table if not exists tasks (
-    id int auto_increment primary key,
-    users_id int not null,
-    task_name varchar(255) not null,
-    task_details text,
-    is_done boolean default false;
-    foreign key (users_id) references users(id) on delete cascade 
+
+CREATE TABLE IF NOT EXISTS tasks (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    users_id INT NOT NULL,
+    task_name VARCHAR(255) NOT NULL,
+    task_details TEXT,
+    is_done BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (users_id) REFERENCES users(id) ON DELETE CASCADE
 );
